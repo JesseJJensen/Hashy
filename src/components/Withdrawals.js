@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Log = () => {
+const Withdrawals = () => {
     return (
     <div>
     <h4>Withdrawals</h4>
@@ -8,4 +8,4 @@ const Log = () => {
     )
 }
 
-export default Log
+export default Withdrawals

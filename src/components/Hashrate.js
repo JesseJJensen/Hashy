@@ -1,7 +1,11 @@
 import React from 'react'
 
 const EthHashrate = () => {
-  return <h4>Ethereum Hashrate</h4>
+    return (
+    <div>
+    <h4>ethereum hashrate</h4>
+    </div>
+    )
 }
 
 export default EthHashrate

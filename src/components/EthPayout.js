@@ -1,7 +1,11 @@
 import React from 'react'
 
 const EthPayout = () => {
-  return <h4>ETH Payout</h4>
+    return (
+    <div>
+    <h4>eth payouts</h4>
+    </div>
+    )
 }
 
 export default EthPayout

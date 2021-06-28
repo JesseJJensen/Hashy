@@ -10,7 +10,7 @@ const Activity = () => {
                 <h4>Orders</h4>
             </div>
             <div>
-                <h4>Withdrawls</h4>
+                <h4>Withdrawals</h4>
             </div>
             <div>
                 <h4>Log</h4>

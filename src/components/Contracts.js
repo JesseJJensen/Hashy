@@ -1,7 +1,11 @@
 import React from 'react'
 
 const Contracts = () => {
-  return <h4>Contracts</h4>
+    return (
+    <div>
+    <h4>contracts</h4>
+    </div>
+    )
 }
 
 export default Contracts
