@@ -44,8 +44,8 @@ const ListView = ({ products }) => {
               <span>Brand :</span>
               {company}
             </p>
-              {stock > 0 && <AddToCart product={product} />}
-              {/* {<AddToCart product={product}/>} */}
+              {/* {stock > 0 && <AddToCart product={product} />} */}
+              {<AddToCart product={product}/>}
             </div>
           </article>
         )
