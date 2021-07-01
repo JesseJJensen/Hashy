@@ -14,7 +14,7 @@ const AboutPage = () => {
             <div className='underline'></div>
           </div>
           <p>
-            about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about about.
+            lorem ipsum about cat dog chick fil a
           </p>
         </article>
       </Wrapper>
