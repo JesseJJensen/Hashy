@@ -16,7 +16,7 @@ import { useHistory } from 'react-router-dom'
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 
 const CheckoutForm = () => {
-  const { cart, total_amount, stock_fee, clearCart } = useCartContext()
+  const { cart, total_amount, shipping_fee, clearCart } = useCartContext()
   const { myUser } = useUserContext()
   const history = useHistory()
   const [succeeded, setSucceeded] = useState(false)
@@ -32,7 +32,7 @@ const CheckoutForm = () => {
       const { data } = await axios.post(
         '/.netlify/functions/create-payment-intent',
 
-        JSON.stringify({ cart, stock_fee, total_amount })
+        JSON.stringify({ cart, shipping_fee, total_amount })
       )
       setClientSecret(data.clientSecret)
     } catch (error) {
