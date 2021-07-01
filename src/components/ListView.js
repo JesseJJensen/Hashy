@@ -2,13 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 import { formatPrice } from '../utils/helpers'
 import { Link } from 'react-router-dom'
-import {AddToCart} from '../components'
+
+import {
+  Loading,
+  Error,
+  ProductImages,
+  AddToCart,
+  Stars,
+  PageHero,
+} from '../components'
 
 const ListView = ({ products }) => {
   return (
     <Wrapper>
       {products.map((product) => {
-        const { id, imgUrl, name, price, description, stock } = product
+        const { id, imgUrl, name, price, description, stock, stars,reviews, id: sku, company, images } = product
         console.log(product)
         return (
           <article key={id}>
@@ -16,18 +24,28 @@ const ListView = ({ products }) => {
             <div>
               <h4>{name}</h4>
               <h5 className='price'>{formatPrice(price)}</h5>
-              <p>{description}</p>
-              <p>Hurry, only {stock} left</p>
-                <p className='info'>
-              <span>Available : </span>
-              {stock > 0 ? 'In stock' : 'out of stock'}
-            </p>
-              {stock > 0 && <AddToCart product={product} />}
-
-
+              <p>{description.substring(0, 150)}...</p>
               <Link to={`/products/${id}`} className='btn'>
                 Details
               </Link>
+                          <h2>{name}</h2>
+            <Stars stars={stars} reviews={reviews} />
+            <h5 className='price'>{formatPrice(price)}</h5>
+            <p className='desc'>{description}</p>
+            <p className='info'>
+              <span>Available : </span>
+              {stock > 0 ? 'In stock' : 'out of stock'}
+            </p>
+            <p className='info'>
+              <span>SKU :</span>
+              {sku}
+            </p>
+            <p className='info'>
+              <span>Brand :</span>
+              {company}
+            </p>
+              {stock > 0 && <AddToCart product={product} />}
+              {/* {<AddToCart product={product}/>} */}
             </div>
           </article>
         )
