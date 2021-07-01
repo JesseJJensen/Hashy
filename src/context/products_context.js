@@ -63,9 +63,10 @@ export const ProductsProvider = ({ children }) => {
         const response = await axios.get(url)
         const singleProduct = response.data.records.map((product) => {
         const { id } = product
-        const { name, image, price, featured, stars, stock, description, reviews, category, company } = singleProduct.fields
-        const imgUrl = image[0].url
-        return { id, name, imgUrl, price, featured, stars, stock, description, reviews, category, company }    
+        const { name, price, featured, stars, stock, description, reviews, category, company } = singleProduct.fields
+        const image = image[0].url
+        console.log(image)
+        return { id, name, image, price, featured, stars, stock, description, reviews, category, company }    
     })
         // console.log(singleProduct)
         dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct })
