@@ -22,13 +22,10 @@ const ListView = ({ products }) => {
           <article key={id}>
             <img src={imgUrl} alt={name} />
             <div>
-              <h4>{name}</h4>
-              <h5 className='price'>{formatPrice(price)}</h5>
-              <p>{description.substring(0, 150)}...</p>
-              <Link to={`/products/${id}`} className='btn'>
+              {/* <Link to={`/products/${id}`} className='btn'>
                 Details
-              </Link>
-                          <h2>{name}</h2>
+              </Link> */}
+            <h2>{name}</h2>
             <Stars stars={stars} reviews={reviews} />
             <h5 className='price'>{formatPrice(price)}</h5>
             <p className='desc'>{description}</p>
