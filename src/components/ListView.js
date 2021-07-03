@@ -10,7 +10,7 @@ import {
   AddToCart,
   Stars,
   PageHero,
-} from '../components'
+} from '.'
 
 const ListView = ({ products }) => {
   return (

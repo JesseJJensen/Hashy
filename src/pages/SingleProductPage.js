@@ -9,7 +9,7 @@ import {
   AddToCart,
   Stars,
   PageHero,
-} from '../components'
+} from '../components/index.js'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 const SingleProductPage = () => {

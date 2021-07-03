@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useCartContext } from '../context/cart_context'
 import { Link } from 'react-router-dom'
-import { CartContent, PageHero } from '../components'
+import { CartContent, PageHero } from '../components/index.js'
 const CartPage = () => {
   const { cart } = useCartContext()
   if (cart.length < 1) {
