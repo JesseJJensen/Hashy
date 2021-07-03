@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Navbar, Sidebar, Footer } from './components'
 import {
   Home,
+  Dashboard,
   SingleProduct,
   Cart,
   Checkout,
@@ -21,6 +22,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route exact path='/dashboard'>
+            <Dashboard />
           </Route>
           <Route path='/about'>
             <About />

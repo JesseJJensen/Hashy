@@ -8,13 +8,18 @@ export const links = [
     text: 'home',
     url: '/',
   },
-  {
+    {
     id: 2,
+    text: 'dashboard',
+    url: '/dashboard',
+  },
+  {
+    id: 3,
     text: 'about',
     url: '/about',
   },
   {
-    id: 3,
+    id: 4,
     text: 'products',
     url: '/products',
   },
