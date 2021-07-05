@@ -57,7 +57,7 @@ const table = base('products')
 
 export const single_product_url = async (id) => {
     const record = await table.find(id)
-    console.log(record.fields)
+    // console.log(record.fields)
 }
 // single_product_url("recPBAj1e081T3mXI")
 

@@ -14,12 +14,12 @@ const CryptoPrices = () => {
     useEffect(() => {
     axios
         .get(
-            'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=237&page=1&sparkline=false'
+            'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false'
         )
         // 237 coins
         .then(res => {
             setCoins(res.data);
-            console.log(res.data);
+            // console.log(res.data);
         })
         .catch(error => console.log(error));
     }, []);
@@ -34,7 +34,7 @@ const CryptoPrices = () => {
 
   return (
     <main>
-        <Wrapper className='page section section-center'>
+        <Wrapper className='section section-center'>
             <article>
                 <div className='coin-app'>
                 <div className='coin-search'>
@@ -48,9 +48,12 @@ const CryptoPrices = () => {
                     />
                     </form>
                 </div>
+                <div>
                 <CryptoColumns />
+                </div>
                 {filteredCoins.map(coin => {
-                    return (
+                    
+                    return (    
                     <Coin
                         key={coin.id}
                         name={coin.name}
@@ -71,6 +74,9 @@ const CryptoPrices = () => {
 };
 
 const Wrapper = styled.section`
+
+
+
 `
 
 export default CryptoPrices

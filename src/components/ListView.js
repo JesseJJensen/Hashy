@@ -17,7 +17,7 @@ const ListView = ({ products }) => {
     <Wrapper>
       {products.map((product) => {
         const { id, imgUrl, name, price, description, stock, stars,reviews, id: sku, company, images, coinprice } = product
-        console.log(product)
+        // console.log(product)
 
         return (
           <article key={id}>

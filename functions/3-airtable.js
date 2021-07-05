@@ -14,7 +14,7 @@ exports.handler = async (event, context, cb) => {
       const imgUrl = image[0].url
       return { id, name, imgUrl, price, featured, instock, stars, stock, description, reviews, category, company }
     })
-    console.log(products)
+    // console.log(products)
     return {
       statusCode: 200,
       body: JSON.stringify(products),

@@ -23,7 +23,6 @@ const Coin = ({
             <div className='coin-data'>
             <p className='coin-price'>${price.toLocaleString()}</p>
             <p className='coin-volume'>${marketcap.toLocaleString()}</p>
-
             {priceChange < 0 ? (
                 <p className='coin-percent red'>{priceChange.toFixed(2)}%</p>
             ) : (
@@ -50,13 +49,16 @@ const Wrapper = styled.section`
   height: 80px;
   border-bottom: 1px solid #d7d7d7;
   width: 900px;
+    display: flex;
+  align-items: center;
+  padding-right: 24px;
+  min-width: 300px;
 }
 
 .coin {
   display: flex;
   align-items: center;
   padding-right: 24px;
-
   min-width: 300px;
 }
 

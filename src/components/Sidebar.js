@@ -37,6 +37,12 @@ const Sidebar = () => {
               <Link to='/checkout' onClick={closeSidebar}>
                 checkout
               </Link>
+              <Link to='/dashboard' onClick={closeSidebar}>
+                dashboard
+              </Link>
+              <Link to='/faqpage' onClick={closeSidebar}>
+                FAQ's
+              </Link>
             </li>
           )}
         </ul>

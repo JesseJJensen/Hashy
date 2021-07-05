@@ -19,6 +19,7 @@ const Dashboard = () => {
 };
 
 const Wrapper = styled.section`
+
 `
 
 export default Dashboard

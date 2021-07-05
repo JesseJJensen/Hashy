@@ -39,7 +39,7 @@ export const ProductsProvider = ({ children }) => {
 
   const fetchProducts = async (url) => {
     const response = await axios.get(url)
-    console.log(response)
+    // console.log(response)
     dispatch({ type: GET_PRODUCTS_BEGIN })
     try {
       const response = await axios.get(url)
@@ -49,7 +49,7 @@ export const ProductsProvider = ({ children }) => {
       const imgUrl = image[0].url
       return { id, name, imgUrl, price, featured, stars, stock, description, reviews, category, company }
     })
-      console.log(products)
+    //   console.log(products)
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products })
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR })
