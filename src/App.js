@@ -4,6 +4,7 @@ import { Navbar, Sidebar, Footer } from './components/index.js'
 import {
   Home,
   Dashboard,
+  FAQPage,
   SingleProduct,
   Cart,
   Checkout,
@@ -23,9 +24,12 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route exact path='/dashboard'>
-            <Dashboard />
+          <Route exact path='/faqpage'>
+            <FAQPage />
           </Route>
+          <PrivateRoute exact path='/dashboard'>
+            <Dashboard />
+          </PrivateRoute>
           <Route path='/about'>
             <About />
           </Route>

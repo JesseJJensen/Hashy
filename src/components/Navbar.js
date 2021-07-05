@@ -22,7 +22,7 @@ const Nav = () => {
             <FaBars />
           </button>
         </div>
-        <ul className='nav-links'>
+        <ul className='nav-links'>       
           {links.map((link) => {
             const { id, text, url } = link
             return (
@@ -34,6 +34,8 @@ const Nav = () => {
           {myUser && (
             <li>
               <Link to='/checkout'>checkout</Link>
+              <Link to='/dashboard'>dashboard</Link>
+              <Link to='/faqpage'>FAQ's</Link>
             </li>
           )}
         </ul>

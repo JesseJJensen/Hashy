@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components'
+import CryptoColumns from './CryptoColumns'
 
 import Coin from './Coin';
 
@@ -13,7 +14,7 @@ const CryptoPrices = () => {
     useEffect(() => {
     axios
         .get(
-            'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false'
+            'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=237&page=1&sparkline=false'
         )
         // 237 coins
         .then(res => {
@@ -47,6 +48,7 @@ const CryptoPrices = () => {
                     />
                     </form>
                 </div>
+                <CryptoColumns />
                 {filteredCoins.map(coin => {
                     return (
                     <Coin
@@ -54,8 +56,8 @@ const CryptoPrices = () => {
                         name={coin.name}
                         price={coin.current_price}
                         symbol={coin.symbol}
-                        marketcap={coin.total_volume}
-                        volume={coin.market_cap}
+                        volume={coin.total_volume}
+                        marketcap={coin.market_cap}
                         image={coin.image}
                         priceChange={coin.price_change_percentage_24h}
                     />
@@ -63,87 +65,12 @@ const CryptoPrices = () => {
                 })}
                 </div>
             </article>
-      {/* <Ethereum />
-      <Bitcoin />
-      <Zcash />
-      <Decred />
-      <Dash />
-      <Litecoin /> */}
         </Wrapper>
     </main>
   );
 };
 
 const Wrapper = styled.section`
-.coin-container {
-  display: flex;
-  justify-content: center;
-}
-
-.coin-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  height: 80px;
-  border-bottom: 1px solid #d7d7d7;
-  width: 900px;
-}
-
-.coin {
-  display: flex;
-  align-items: center;
-  padding-right: 24px;
-
-  min-width: 300px;
-}
-
-.coin h1 {
-  font-size: 16px;
-  width: 150px;
-}
-
-.coin img {
-  height: 30px;
-  width: 30px;
-  margin-right: 10px;
-}
-
-.coin-symbol {
-  text-transform: uppercase;
-}
-
-.coin-data {
-  display: flex;
-  text-align: right;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.coin-price {
-  width: 110px;
-}
-
-.coin-volume {
-  width: 155px;
-}
-
-.coin-marketcap {
-  width: 230px;
-}
-
-.coin-percent {
-  width: 100px;
-}
-
-.red {
-  color: #f00606;
-}
-
-.green {
-  color: #11d811;
-}
-
 `
 
 export default CryptoPrices
