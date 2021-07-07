@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa'
 import { useCartContext } from '../context/cart_context'
 import AmountButtons from './AmountButton'
+
 const AddToCart = ({ product }) => {
   // add to cart
   const { addToCart } = useCartContext()

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useProductsContext } from '../context/products_context'
 import { useCartContext } from '../context/cart_context'
 import { useUserContext } from '../context/user_context'
+
 const CartButton = () => {
   const { closeSidebar } = useProductsContext()
   const { total_items, clearCart } = useCartContext()

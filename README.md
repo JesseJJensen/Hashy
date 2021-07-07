@@ -1,1 +1,136 @@
-README
+# HASHY
+
+![img](./src/assets/crypto4.jpeg)
+
+
+## User Story
+
+The user wants to create an account and purchase hashrate power to start mining their favorite crypto's. They want to easily purchase hashrate. The user will be able to login to their account and see their hashing power for each crypto they are mining. 
+
+## Criteria
+### Key features for user:
+- Easily navigate through the site
+- Add items to cart
+- Checkout and pay for items
+- Filter through item by price, name, and category
+
+## Wire Frame
+### Home Page
+![img](./src/assets/Wire1.png)
+![img](./src/assets/Wire2.png)
+
+
+## Code
+### Product
+
+``` js
+import React from 'react'
+import styled from 'styled-components'
+import { formatPrice } from '../utils/helpers'
+import { FaBitcoin } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+
+const Product = ({ imgUrl, name, price, id }) => {
+  return (
+    <Wrapper>
+      <div className='container'>
+        <img src={imgUrl} alt={name} />
+        <Link to={`/products`} className='link'>
+          <FaBitcoin />
+        </Link>
+      </div>
+      <footer>
+        <h5>{name}</h5>
+        <p>{formatPrice(price)}</p>
+      </footer>
+    </Wrapper>
+  )
+}
+```
+
+### API
+
+``` js
+const CryptoPrices = () => {
+    const [coins, setCoins] = useState([]);
+    const [search, setSearch] = useState('');
+
+    useEffect(() => {
+    axios
+        .get(
+            'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false'
+        )
+        // 237 coins
+        .then(res => {
+            setCoins(res.data);
+            // console.log(res.data);
+        })
+        .catch(error => console.log(error));
+    }, []);
+
+    const handleChange = e => {
+        setSearch(e.target.value);
+    };
+
+    const filteredCoins = coins.filter(coin =>
+        coin.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+  return (
+    <main>
+        <Wrapper className='section section-center'>
+            <article>
+                <div className='coin-app'>
+                <div className='coin-search'>
+                    <h1 className='coin-text'>Search a currency</h1>
+                    <form>
+                    <input
+                        className='coin-input'
+                        type='text'
+                        onChange={handleChange}
+                        placeholder='Search'
+                    />
+                    </form>
+                </div>
+                <div>
+                <CryptoColumns />
+                </div>
+                {filteredCoins.map(coin => {
+                    
+                    return (    
+                    <Coin
+                        key={coin.id}
+                        name={coin.name}
+                        price={coin.current_price}
+                        symbol={coin.symbol}
+                        volume={coin.total_volume}
+                        marketcap={coin.market_cap}
+                        image={coin.image}
+                        priceChange={coin.price_change_percentage_24h}
+                    />
+                    );
+                })}
+                </div>
+            </article>
+        </Wrapper>
+    </main>
+  );
+};
+```
+
+
+## Site
+
+![img](./src/assets/Home1.png)
+![img](./src/assets/Cart.png)
+![img](./src/assets/Coins.png)
+
+## Future Considerations
+### User Dashboard
+![img](./src/assets/Future1.png)
+
+### Order Form
+![img](./src/assets/Future2.png)
+
+### User Account Info
+![img](./src/assets/Future3.png)
