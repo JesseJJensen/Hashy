@@ -77,5 +77,17 @@ const questions = [
     info:
       'Bitcoin Transaction Fee or "Network fee" or “Miner fee” or “Withdrawal fee” is the additional amount you pay to miners when a Bitcoin transaction is processed by a miner and confirmed. Bitcoin transaction fee is not fixed, It fluctuates a lot. Bitcoin processes 4.6 transactions per second(4.6 TPS). Bitcoin transaction fees can spike during periods of congestion on the network. This fee is paid to miners, not Hashy.',
   },
+  {
+    id: 14,
+    title: 'Answer to Joshs question',
+    info:
+      'Error can not compute...crashing...',
+  },
+  {
+    id: 15,
+    title: 'Other questions about the presentation',
+    info:
+      'Anyone else have a question...? Anyone at all..? Ok, no one has any questions. Thank you.',
+  },
 ]
 export default questions
