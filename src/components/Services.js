@@ -1,18 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import { services } from '../utils/constants'
+
 const Services = () => {
   return (
     <Wrapper>
       <div className='section-center'>
         <article className='header'>
           <h3>
-            crypto <br /> mining
+            how to get started
           </h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-            dolorum debitis consectetur reprehenderit non aliquam voluptates
-            dolore aut vero consequuntur.
+            3 Easy steps to start cloud mining.
           </p>
         </article>
         <div className='services-center'>

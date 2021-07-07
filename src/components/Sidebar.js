@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/hero-bcg-2.jpeg'
+import logo from '../assets/logo4.png'
 import { Link } from 'react-router-dom'
 import { useProductsContext } from '../context/products_context'
 import { FaTimes } from 'react-icons/fa'

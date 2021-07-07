@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { formatPrice } from '../utils/helpers'
-import { FaSearch } from 'react-icons/fa'
+import { FaBitcoin } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Product = ({ imgUrl, name, price, id }) => {
@@ -9,8 +9,8 @@ const Product = ({ imgUrl, name, price, id }) => {
     <Wrapper>
       <div className='container'>
         <img src={imgUrl} alt={name} />
-        <Link to={`/products/`} className='link'>
-          <FaSearch />
+        <Link to={`/products`} className='link'>
+          <FaBitcoin />
         </Link>
       </div>
       <footer>

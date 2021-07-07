@@ -2,26 +2,24 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import crypto from '../assets/crypto4.jpeg'
+
 const Hero = () => {
   return (
     <Wrapper className='section-center'>
       <article className='content'>
         <h1>
-          Invest <br />
-          Crypto
+          HASHY MINING
         </h1>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, at
-          sed omnis corporis doloremque possimus velit! Repudiandae nisi odit,
-          aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis
-          alias?
+            Hashy aims to extend business to the entire Cryptocurrency industry chain in the future and serve global users with technology innovations. Hashy is offering a wide selection of cloud mining contracts. Mining contracts with payouts in the most popular and trusted cryptocurrencies. Choose a contract now and get the first payment to your crypto wallet tomorrow.
         </p>
         <Link to='/products' className='btn hero-btn'>
           shop now
         </Link>
       </article>
       <article className='img-container'>
-        {/* <img src={heroBcg} alt='nice table' className='main-img' /> */}
+        <img src={crypto} alt='nice table' className='main-img' />
         <img src={heroBcg2} alt='person working' className='accent-img' />
       </article>
     </Wrapper>

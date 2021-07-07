@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import CryptoPrices from '../components/CryptoPrices';
+import Bitcoin from '../components/Bitcoin';
 
 const Dashboard = () => {
   return (

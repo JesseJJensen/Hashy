@@ -17,6 +17,13 @@ import Stars from './Stars'
 import CartContent from './CartContent'
 import PageHero from './PageHero'
 import StripeCheckout from './StripeCheckout'
+import Nav from './Nav'
+import Form from './Form'
+import FormField from './FormField'
+import StyledNavLink from './StyledNavLink'
+
+
+
 export {
   FeaturedProducts,
   Navbar,
@@ -37,4 +44,9 @@ export {
   CartContent,
   PageHero,
   StripeCheckout,
+  Nav,
+  Form,
+  FormField,
+  StyledNavLink
+
 }

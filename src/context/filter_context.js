@@ -25,7 +25,7 @@ const initialState = {
     min_price: 0,
     max_price: 0,
     price: 0,
-    stock: false,
+    instock: false,
   },
 }
 
@@ -67,7 +67,7 @@ export const FilterProvider = ({ children }) => {
     if (name === 'price') {
       value = Number(value)
     }
-    if (name === 'stock') {
+    if (name === 'instock') {
       value = e.target.checked
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } })

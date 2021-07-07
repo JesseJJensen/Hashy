@@ -14,6 +14,8 @@ import {
   PrivateRoute,
   AuthWrapper,
 } from './pages'
+import App2 from './App2'
+
 function App() {
   return (
     <AuthWrapper>
@@ -26,7 +28,7 @@ function App() {
           </Route>
           <Route exact path='/faqpage'>
             <FAQPage />
-          </Route>
+          </Route> 
           <PrivateRoute exact path='/dashboard'>
             <Dashboard />
           </PrivateRoute>

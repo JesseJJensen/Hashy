@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../assets/hero-bcg-2.jpeg'
+import logo from '../assets/logo4.png'
 import { FaBars } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { links } from '../utils/constants'
 import CartButtons from './CartButtons'
 import { useProductsContext } from '../context/products_context'
 import { useUserContext } from '../context/user_context'
+import { FaBitcoin, FaRegEdit } from 'react-icons/fa'
 
 const Nav = () => {
   const { openSidebar } = useProductsContext()
@@ -34,7 +35,7 @@ const Nav = () => {
           {myUser && (
             <li>
               <Link to='/checkout'>checkout</Link>
-              <Link to='/dashboard'>dashboard</Link>
+              <Link to='/dashboard'>Dashboard</Link>
               <Link to='/faqpage'>FAQ's</Link>
             </li>
           )}

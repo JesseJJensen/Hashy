@@ -30,18 +30,22 @@ const ListView = ({ products }) => {
             <Stars stars={stars} reviews={reviews} />
             <h5 className='price'>{formatPrice(price)}</h5>
             <p className='desc'>{description}</p>
-            <p className='info'>
+            {/* <p className='info'>
               <span>Available : </span>
               {stock > 0 ? 'In stock' : 'out of stock'}
-            </p>
+            </p> */}
             <p className='info'>
               <span>SKU :</span>
               {sku}
             </p>
             <p className='info'>
-              <span>Brand :</span>
+              <span>Company :</span>
               {company}
             </p>
+            {/* <p className='info'>
+              <span>Current Price :</span>
+              {coinprice}
+            </p> */}
               {/* {stock > 0 && <AddToCart product={product} />} */}
               {<AddToCart product={product}/>}
             </div>

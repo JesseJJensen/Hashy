@@ -98,7 +98,7 @@ const Filters = () => {
           </div>
           {/* end of price */}
           {/* instock */}
-          <div className='form-control instock'>
+          {/* <div className='form-control instock'>
             <label htmlFor='instock'>In Stock</label>
             <input
               type='checkbox'
@@ -107,7 +107,7 @@ const Filters = () => {
               checked={instock}
               onChange={updateFilters}
             />
-          </div>
+          </div> */}
           {/* end of  instock */}
         </form>
         <button type='button' className='clear-btn' onClick={clearFilters}>

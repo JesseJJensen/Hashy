@@ -4,13 +4,13 @@ const Contact = () => {
   return (
     <Wrapper>
       <div className='section-center'>
-        <h3>contact us</h3>
+        <h3>Contact Us</h3>
         <div className='content'>
           <p>
-            contact left contact left contact left contact left contact left contact left contact left contact left contact left contact left contact left contact left
+            Leave your email and we will get in touch!
           </p>
           <form className='contact-form'                                 action='https://formspree.io/f/xknkzrzz'
-              method='Post'
+              method='Post' 
               >
             <input
               type='email'
@@ -19,7 +19,7 @@ const Contact = () => {
               name='_replyto'
             />
             <button type='submit' className='submit-btn'>
-              subscribe
+              submit
             </button>
           </form>
         </div>

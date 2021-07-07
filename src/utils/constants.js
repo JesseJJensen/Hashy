@@ -1,5 +1,7 @@
 import React from 'react'
-import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi'
+import { FaBitcoin, FaRegEdit } from 'react-icons/fa'
+import { GiTakeMyMoney } from 'react-icons/gi'
+
 const API_KEY = process.env.API_KEY
 
 export const links = [
@@ -23,24 +25,24 @@ export const links = [
 export const services = [
   {
     id: 1,
-    icon: <GiCompass />,
-    title: 'mission',
+    icon: <FaRegEdit />,
+    title: 'sign up',
     text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+      'Fill in the form and get ready to start mining in under than 1 minute',
   },
   {
     id: 2,
-    icon: <GiDiamondHard />,
-    title: 'vision',
+    icon: <FaBitcoin />,
+    title: 'purchase a contract',
     text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+      'Choose one of the most profitable contracts and start cloud mining',
   },
   {
     id: 3,
-    icon: <GiStabbedNote />,
-    title: 'history',
+    icon: <GiTakeMyMoney/>,
+    title: 'get paid',
     text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+      'Withdraw your mining income on a daily basis to your crypto wallet',
   },
 ]
 

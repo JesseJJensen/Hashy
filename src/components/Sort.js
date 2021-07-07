@@ -2,6 +2,7 @@ import React from 'react'
 import { useFilterContext } from '../context/filter_context'
 import { BsFillGridFill, BsList } from 'react-icons/bs'
 import styled from 'styled-components'
+
 const Sort = () => {
   const {
     filtered_products: products,
@@ -18,13 +19,13 @@ const Sort = () => {
           onClick={setGridView}
           className={`${grid_view ? 'active' : null}`}
         >
-          <BsFillGridFill />
+          <BsList />
         </button>
         <button
           onClick={setListView}
           className={`${!grid_view ? 'active' : null}`}
         >
-          <BsList />
+          <BsFillGridFill />
         </button>
       </div>
       <p>{products.length} products found</p>
