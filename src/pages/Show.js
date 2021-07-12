@@ -6,7 +6,7 @@ import styled from 'styled-components'
 function Show(props) {
 
   const deleteWallet = () => {
-    fetch(`https://hashy-app.herokuapp.com/wallets/${props.wallet._id}`, {
+    fetch(`http://localhost:9000/wallets/${props.wallet._id}`, {
       method: 'DELETE',
     }).then((res) => {
       props.reload()

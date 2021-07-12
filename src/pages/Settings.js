@@ -12,7 +12,7 @@ import Nav from '../components/Nav'
 
 require('dotenv').config()
 
-const CONNECTION_URI = process.env.DB_URI || 'https://hashy-app.herokuapp.com'
+const CONNECTION_URI = process.env.DB_URI || 'http://localhost:9000'
 
 
 function Settings(props) {
