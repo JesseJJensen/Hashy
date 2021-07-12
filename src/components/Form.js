@@ -3,7 +3,7 @@ import FormField from './FormField'
 import { withRouter } from 'react-router-dom'
 
 // Connection String
-const CONNECTION_URI = process.env.DB_URI || 'http://localhost:9000'
+const CONNECTION_URI = process.env.DB_URI || 'https://hashy-app.herokuapp.com'
 
 function Form(props) {
   const initialState = props.wallet
