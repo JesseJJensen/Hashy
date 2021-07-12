@@ -3,7 +3,7 @@ import Dashboard from './Dashboard'
 import FAQPage from './FAQPage'
 import Products from './ProductsPage'
 import SingleProduct from './SingleProductPage'
-import About from './AboutPage'
+import Settings from './Settings'
 import Cart from './CartPage'
 import Error from './ErrorPage'
 import Checkout from './CheckoutPage'
@@ -21,7 +21,7 @@ export {
   FAQPage,
   SingleProduct,
   Cart,
-  About,
+  Settings,
   Error,
   Checkout,
   Products,
@@ -29,5 +29,5 @@ export {
   AuthWrapper,
   New,
   Edit,
-  Show
+  Show,
 }

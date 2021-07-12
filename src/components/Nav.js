@@ -3,8 +3,8 @@ const Nav = (props) => {
   return (
     <nav>
       <ul className='nav-list'>
-        <StyledNavLink to='/home2' text='Home Page' />
-        <StyledNavLink to='/new' text='Create New Bounty' />
+        <StyledNavLink to='/wallet' text='My Wallets' />
+        <StyledNavLink to='/new' text='Add Wallet' />
       </ul>
     </nav>
   )

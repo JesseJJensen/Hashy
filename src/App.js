@@ -9,18 +9,21 @@ import {
   Cart,
   Checkout,
   Error,
-  About,
+  Settings,
   Products,
   PrivateRoute,
   AuthWrapper,
 } from './pages'
 import App2 from './App2'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
     <AuthWrapper>
+        
       <Router>
-        <Navbar />
+        <App2></App2>
+        {/* <Navbar /> */}
         <Sidebar />
         <Switch>
           <Route exact path='/'>
@@ -29,12 +32,12 @@ function App() {
           <Route exact path='/faqpage'>
             <FAQPage />
           </Route> 
-          <PrivateRoute exact path='/dashboard'>
+          <Route exact path='/dashboard'>
             <Dashboard />
-          </PrivateRoute>
-          <Route path='/about'>
-            <About />
           </Route>
+          <BrowserRouter path='/settings'>
+            <Settings />
+          </BrowserRouter>
           <Route path='/cart'>
             <Cart />
           </Route>
@@ -42,16 +45,17 @@ function App() {
             <Products />
           </Route>
           <Route path='/products/:id' children={<SingleProduct />} />
-          <PrivateRoute path='/checkout'>
+          <Route path='/checkout'>
             <Checkout />
-          </PrivateRoute>
+          </Route>
           <Route path='*'>
             <Error />
           </Route>
         </Switch>
         <Footer />
+        
       </Router>
-    </AuthWrapper>
+     </AuthWrapper>
   )
 }
 

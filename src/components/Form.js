@@ -6,21 +6,19 @@ import { withRouter } from 'react-router-dom'
 const CONNECTION_URI = process.env.DB_URI || 'http://localhost:9000'
 
 function Form(props) {
-  const initialState = props.bounty
+  const initialState = props.wallet
     ? {
-        name: props.bounty.name,
-        wantedFor: props.bounty.wantedFor,
-        client: props.bounty.client,
-        reward: props.bounty.reward,
+        name: props.wallet.name,
+        crypto: props.wallet.crypto,
+        walletAddress: props.wallet.walletAddress,
+        balance: props.wallet.balance,
       }
     : {
         name: '',
-        wantedFor: '',
-        client: '',
-        reward: '',
+        crypto: '',
+        walletAddress: '',
+        balance: '',
       }
-  // conditionally defined state - if props are present -
-  // then set initial state with values from props.bounty otherwise fill an object with empty strings
 
   const [state, setState] = useState(initialState)
 
@@ -29,13 +27,11 @@ function Form(props) {
 
     // Arg1 for fetch (conditional)
 
-    let url = props.bounty
-      ? `${CONNECTION_URI}/bounties/${props.bounty._id}`
-      : `${CONNECTION_URI}/bounties/`
+    let url = props.wallet
+      ? `${CONNECTION_URI}/wallets/${props.wallet._id}`
+      : `${CONNECTION_URI}/wallets/`
 
-    // Arg2 for fetch (conditional)
-    // If props.bounty is defined, set the method to put (for edit),otherwise set method to post (for create)
-    let method = props.bounty ? 'PUT' : 'POST'
+    let method = props.wallet ? 'PUT' : 'POST'
 
     let options = {
       method,
@@ -50,9 +46,9 @@ function Form(props) {
 
     props.reload()
 
-    props.bounty
-      ? props.history.push(`/show/${props.bounty._id}`)
-      : props.history.push(`/show/${respJSON.bounty._id}`)
+    props.wallet
+      ? props.history.push(`/show/${props.wallet._id}`)
+      : props.history.push(`/show/${respJSON.wallet._id}`)
   }
 
   const handleInput = (e) => {
@@ -69,33 +65,33 @@ function Form(props) {
 
       <FormField
         labelLink='name'
-        displayLabel='Name'
+        displayLabel='Wallet Name'
         value={state.name}
         handler={handleInput}
       />
       <FormField
-        labelLink='wantedFor'
-        displayLabel='Wanted For'
-        value={state.wantedFor}
+        labelLink='crypto'
+        displayLabel='Cryptocurrency Name'
+        value={state.crypto}
         handler={handleInput}
       />
       <FormField
-        labelLink='client'
-        displayLabel='Client'
-        value={state.client}
+        labelLink='walletAddress'
+        displayLabel='Wallet Address'
+        value={state.walletAddress}
         handler={handleInput}
       />
       <FormField
-        labelLink='reward'
-        displayLabel='Reward'
-        value={state.reward}
+        labelLink='balance'
+        displayLabel='Current Balance'
+        value={state.balance}
         handler={handleInput}
       />
 
       <button type='submit'>
-        {props.bounty
-          ? `Edit "${props.bounty.name}" Bounty`
-          : 'Create New Bounty'}
+        {props.wallet
+          ? `Edit "${props.wallet.name}" Wallet`
+          : 'Add Wallet'}
       </button>
     </form>
   )

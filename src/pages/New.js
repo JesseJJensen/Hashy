@@ -5,7 +5,7 @@ function New(props) {
 
   return (
     <div>
-      <h2>NEW BOUNTY VIEW</h2>
+      <h2>Add Wallet</h2>
       <Form reload={props.reload} />
     </div>
   )

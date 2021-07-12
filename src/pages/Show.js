@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../index.css'
+import styled from 'styled-components'
 
 function Show(props) {
-  /* New Feature:
-    1. Added a delete button in JSX to trigger the below function 
-    2. Added an edit <Link/> to redirect to edit page for this bounty
-  */
-  const deleteBounty = () => {
-    fetch(`http://localhost:9000/bounties/${props.bounty._id}`, {
+
+  const deleteWallet = () => {
+    fetch(`http://localhost:9000/wallets/${props.wallet._id}`, {
       method: 'DELETE',
     }).then((res) => {
       props.reload()
@@ -15,24 +14,29 @@ function Show(props) {
     })
   }
 
-  // if props.bounty is undefined(falsy), render loading message instead
-  if (!props.bounty) {
+  if (!props.wallet) {
     return <h1>Loading...</h1>
   }
-  // default JSX with content from props.bounty && links to edit page / delete option
+
   return (
-    <div>
-      <h2>{props.bounty.name}</h2>
-      <p>Wanted for: {props.bounty.wantedFor}</p>
-      <p>Client: {props.bounty.client}</p>
-      <p>Reward: {props.bounty.reward}</p>
+    <Wrapper>
+    <div classname='container'>
+      <h2>{props.wallet.name}</h2>
+      <p>Cryptocurrency Name: {props.wallet.crypto}</p>
+      <p>Wallet Address: {props.wallet.walletAddress}</p>
+      <p>Balance: {props.wallet.balance}</p>
       <div>
-        <Link to={`/edit/${props.bounty._id}`}>Edit {props.bounty.name}</Link>
+        <Link to={`/edit/${props.wallet._id}`}>Edit {props.wallet.name}</Link>
         <br />
-        <button onClick={deleteBounty}>Delete this Bounty</button>
+        <button onClick={deleteWallet}>Delete this Wallet</button>
       </div>
     </div>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.main`
+
+`
 
 export default Show
