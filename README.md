@@ -285,3 +285,23 @@ const StripeCheckout = () => {
 
 ### User Account Info
 ![img](./src/assets/Future3.png)
+
+### Resources used 
+
+https://www.udemy.com/course/build-ecommerce-website-like-amazon-react-node-mongodb/?couponCode=JUNE21
+
+https://youtu.be/Z_D4w6HmT8k
+
+https://www.youtube.com/watch?v=n_KASTN0gUE
+
+https://youtu.be/ngc9gnGgUdA
+
+https://youtu.be/aibtHnbeuio
+
+https://www.udemy.com/course/in-depth-html-css-course-build-responsive-websites/
+
+https://www.youtube.com/watch?v=02ieJ1YXZM4
+
+https://youtu.be/0divhP3pEsg
+
+https://github.com/codyseibert/youtube
